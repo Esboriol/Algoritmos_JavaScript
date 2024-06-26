@@ -1,5 +1,14 @@
 
 let jogador = "O"
+const div1 = document.getElementById("div1")
+const div2 = document.getElementById("div2")
+const div3 = document.getElementById("div3")
+const div4 = document.getElementById("div4")
+const div5 = document.getElementById("div5")
+const div6 = document.getElementById("div6")
+const div7 = document.getElementById("div7")
+const div8 = document.getElementById("div8")
+const div9 = document.getElementById("div9")
 
 function jogar(identificador) {
 
@@ -18,20 +27,12 @@ function jogar(identificador) {
 
 function verificar_ganhador() {
 
-const div1 = document.getElementById("div1").textContent
-const div2 = document.getElementById("div2").textContent
-const div3 = document.getElementById("div3").textContent
-const div4 = document.getElementById("div4").textContent
-const div5 = document.getElementById("div5").textContent
-const div6 = document.getElementById("div6").textContent
-const div7 = document.getElementById("div7").textContent
-const div8 = document.getElementById("div8").textContent
-const div9 = document.getElementById("div9").textContent
 
 
-    if(div1 == 'X' && div2 == 'X' && div3 == 'X') {
+
+    if(div1.textContent == 'X' && div2.textContent == 'X' && div3.textContent == 'X') {
         alert("O jogador X ganhou")
-    } else if (div1 == 'O' && div2 == 'O' && div3 == 'O') {
+    } else if (div1.textContent == 'O' && div2.textContent == 'O' && div3.textContent == 'O') {
         alert("O joador O ganhou")
     }
 
@@ -47,33 +48,33 @@ const div9 = document.getElementById("div9").textContent
         alert("O jogador O ganhou")
     }
 
-    if ( div1 == 'X' && div5 == 'X' && div9 == 'X') {
+    if ( div1.textContent == 'X' && div5 == 'X' && div9 == 'X') {
         alert("O jogador X ganhou")
-    } else if (div1 == 'O' && div5 == 'O' && div9 == 'O') {
+    } else if (div1.textContent == 'O' && div5 == 'O' && div9 == 'O') {
         alert('O jogador O ganhou')
     }
 
-    if(div3 == 'X' && div5 == 'X' && div7 == 'X') {
+    if(div3.textContent == 'X' && div5 == 'X' && div7 == 'X') {
         alert("O jogador X ganhou")
-    } else if (div3 == 'O' && div5 == 'O' && div7 == 'O') {
+    } else if (div3.textContent == 'O' && div5 == 'O' && div7 == 'O') {
         alert("O jogador O ganhou")
     }
 
-    if(div1 == 'X' && div4 == 'X' && div7 == 'X') {
+    if(div1.textContent == 'X' && div4 == 'X' && div7 == 'X') {
         alert("O jogador X ganhou")
-    } else if (div1 == 'O' && div4 == 'O' && div7 == 'O') {
+    } else if (div1.textContent == 'O' && div4 == 'O' && div7 == 'O') {
         alert("O jogador O ganhou")
     }
 
-    if(div2 == 'X' && div5 == 'X' && div8 == 'X') {
+    if(div2.textContent.textContent == 'X' && div5 == 'X' && div8 == 'X') {
         alert("O jogador X ganhou")
-    } else if (div2 == 'O' && div5 == 'O' && div8 == 'O'){
+    } else if (div2.textContent.textContent == 'O' && div5 == 'O' && div8 == 'O'){
         alert("O jogador O ganhou")
     }
 
-    if(div3 == 'X' && div6 == 'X' && div9 == 'X') {
+    if(div3.textContent == 'X' && div6 == 'X' && div9 == 'X') {
         alert("O jogador X ganhou")
-    } else if (div3 == 'O' && div6 == 'O' && div9 == 'O') {
+    } else if (div3.textContent == 'O' && div6 == 'O' && div9 == 'O') {
         alert("O jogador O ganhou")
     }
 
@@ -81,6 +82,10 @@ const div9 = document.getElementById("div9").textContent
 }
 
 function reset() {
+
+    div1.textContent.textContent = ''
+    div2.textContent.textContent = ''
+    div3.textContent.textContent = ''
 
 
 }

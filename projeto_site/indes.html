@@ -17,10 +17,11 @@
                 <img class="brand-logo" alt="logo" src="img/logo.svg">
             </header>
         </a>
+        
         <section class="content">
             <form> 
-                <input type="text" placeholder="Filtrar por cidade">
-                <button class="primary">Filtrar</button>
+                <input type="text" placeholder="Filtrar por cidade" id="pesquisa" onkeypress="filtrarComEnter(event)">
+                <button type="button" class="primary" onclick="filtrar()">Filtrar</button>
             </form>
     
             <section class="results" id="lista-imoveis"></section>
@@ -30,6 +31,7 @@
     </main>
 </body>
 
+<script src="js/imoveis.js"></script>
 <script src="js/index.js"></script>
 
 </html>

@@ -30,7 +30,3 @@ function Fracao() {
     display.value = display.value / 100
 
 }
-
-function virgula() {
-    
-}

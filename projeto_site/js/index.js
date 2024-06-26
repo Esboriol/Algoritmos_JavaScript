@@ -1,76 +1,4 @@
-const imoveis = [
-    {
-        "id" : 1,
-        "url_foto": "img/1.jpg",
-        "nome": "Casa 01",
-        "cidade": "Saltinho",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 2,
-        "url_foto": "img/2.jpg",
-        "nome": "Casa 02",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 3,
-        "url_foto": "img/3.jpg",
-        "nome": "Casa 03",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    }, 
-    {
-        "id" : 4,
-        "url_foto": "img/4.jpg",
-        "nome": "Casa 04",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 5,
-        "url_foto": "img/5.jpg",
-        "nome": "Casa 05",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    }, 
-    {
-        "id" : 6,
-        "url_foto": "img/6.jpg",
-        "nome": "Casa 06",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 7,
-        "url_foto": "img/7.jpg",
-        "nome": "Casa 07",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 8,
-        "url_foto": "img/8.jpg",
-        "nome": "Casa 08",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    }, 
-    {
-        "id" : 9,
-        "url_foto": "img/9.jpg",
-        "nome": "Casa 09",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    },
-    {
-        "id" : 10,
-        "url_foto": "img/10.jpg",
-        "nome": "Casa 10",
-        "cidade": "Charqueada",
-        "estado": "São Paulo"
-    }
-]
-
+const imoveis = buscarTodosImoveis()
 
 function criarImovelHTML(imovel) {
     const section = document.createElement("section")
@@ -98,7 +26,21 @@ function criarImovelHTML(imovel) {
     const a = document.createElement("a")
     a.textContent = "Veja mais"
 
+    const url = `detalhes.html?imovelId=${imovel.id}`
+    a.setAttribute("href", url)
+
     section.appendChild(a)
+
+    const favId = `fav-${imovel.id}`
+    const favorito = document.createElement("img")
+    favorito.setAttribute("id", favId)
+    favorito.setAttribute("src", "img/desfavorito.png")
+    favorito.setAttribute("class", "favorito")
+    favorito.setAttribute("onclick", `favoritar(${JSON.stringify(imovel)})`)
+
+    section.appendChild(favorito)
+
+
 
     const sectionResults = document.getElementById("lista-imoveis")
     sectionResults.appendChild(section)
@@ -107,8 +49,77 @@ function criarImovelHTML(imovel) {
 
 }
 
-for (let i = 0; i< imoveis.length; i++) {
-  const imovel = imoveis[i];
-  criarImovelHTML(imovel)
+function filtrar() {
+    const pesquisa = document.getElementById("pesquisa").value
+    listarImoveisComFiltro(pesquisa)
+}
+
+function favoritar(imovel) {
+    const favId = `fav-${imovel.id}`
+    const fav = document.getElementById(favId)
+
+    if (fav.getAttribute("src") == "img/favorito.png") {
+        fav.setAttribute("src", "img/desfavorito.png")
+    } else {
+        fav.setAttribute("src", "img/favorito.png")
+    }
+}
+
+function filtrarComEnter(tecla) {
+    if (tecla.keyCode == 13) {
+        tecla.preventDefault()
+
+        filtrar()
+
+    }
+}
+
+function listarImoveisComFiltro(texto) {
+
+    limparLista()
+
+    if (texto == ''){
+
+        mostrarTodosOsImoveis()
+
+    } else {
+
+        for (let i = 0; i < imoveis.length; i++) {
+
+         const imovel_jason = imoveis[i];
+
+            const textoM = removerAcentos(texto.toUpperCase())
+            const estadoImovelM = removerAcentos(imovel_jason.estado.toUpperCase())
+            const cidadeImovelM = removerAcentos(imovel_jason.cidade.toUpperCase())
+
+            if (cidadeImovelM.search(textoM) == 0 || estadoImovelM.search(textoM) == 0) {
+
+            criarImovelHTML(imovel_jason)
+            }
+        }
     }
 
+}
+
+function mostrarTodosOsImoveis() {
+    for (let i = 0; i< imoveis.length; i++) {
+        const imovel = imoveis[i];
+        criarImovelHTML(imovel)
+    }
+    
+}
+
+function removerAcentos(str) {
+return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function limparLista() {
+    const sectionResults = document.getElementById("lista-imoveis")
+
+    while (sectionResults.lastElementChild) {
+        sectionResults.removeChild(sectionResults.lastElementChild)
+
+    }
+}
+
+mostrarTodosOsImoveis()
