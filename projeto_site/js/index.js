@@ -1,6 +1,7 @@
 const imoveis = buscarTodosImoveis()
+let imoveisFavoritos = []
 
-function criarImovelHTML(imovel) {
+function criarImovelHTML(imovel, favorito) {
     const section = document.createElement("section")
     section.setAttribute("class", "listing")
 
@@ -34,8 +35,13 @@ function criarImovelHTML(imovel) {
     const favId = `fav-${imovel.id}`
     const favorito = document.createElement("img")
     favorito.setAttribute("id", favId)
-    favorito.setAttribute("src", "img/desfavorito.png")
-    favorito.setAttribute("class", "favorito")
+
+    if (favorito == true) {
+        favorito.setAttribute("scr", "img/favorito.png")
+    } else if (favorito == false) {
+        favorito.setAttribute("src", "img/desfavorito.png")
+    }
+
     favorito.setAttribute("onclick", `favoritar(${JSON.stringify(imovel)})`)
 
     section.appendChild(favorito)
@@ -62,7 +68,91 @@ function favoritar(imovel) {
         fav.setAttribute("src", "img/desfavorito.png")
     } else {
         fav.setAttribute("src", "img/favorito.png")
+        imoveisFavoritos.push(imovel)
+        window.localStorage.setItem("lista", JSON.stringify(imoveisFavoritos))
     }
+}
+
+function mostrarFavoritos() {
+    
+    limparLista()
+    imoveisFavoritos = JSON.parse(window.localStorage.getItem("lista"))
+
+    for (let i = 0; i < imoveisFavoritos.length; i++) {
+        const imvFav = imoveisFavoritos[i];
+        criarImovelHTML(imvFav, true)
+
+    }
+}
+
+function apartamento() {
+
+    const apartamento = document.getElementById("Selecionar_aparta").checked
+    
+    if(apartamento == true) {
+
+        limparLista()
+
+        for (let i = 0; i < imoveis.length; i++) {
+            const algo = imoveis[i];
+
+            if (algo.apartamento == "Sim") {
+
+                criarImovelHTML(algo, false)
+                
+            }
+            
+        }
+        
+    } else {
+
+        limparLista()
+        mostrarTodosOsImoveis()
+        
+    }
+
+    if(apartamento == true && document.getElementById("Selecionar_casa").checked == true) {
+
+        limparLista()
+        mostrarTodosOsImoveis()
+
+    }
+
+}
+
+function casa() {
+    const search = document.getElementById("Selecionar_casa").checked
+
+
+    if (search == true) {
+
+        limparLista()
+        
+        for (let i = 0; i < imoveis.length; i++) {
+            const naosei = imoveis[i];
+
+            if(naosei.apartamento == "Nao") {
+
+                criarImovelHTML(naosei, false)
+
+            }
+            
+        }
+
+    } else {
+
+        limparLista()
+        mostrarTodosOsImoveis()
+
+    }
+
+    if(search == true && document.getElementById("Selecionar_aparta").checked == true) {
+
+        limparLista()
+        mostrarTodosOsImoveis()
+
+    }
+
 }
 
 function filtrarComEnter(tecla) {
@@ -94,7 +184,7 @@ function listarImoveisComFiltro(texto) {
 
             if (cidadeImovelM.search(textoM) == 0 || estadoImovelM.search(textoM) == 0) {
 
-            criarImovelHTML(imovel_jason)
+            criarImovelHTML(imovel_jason, false)
             }
         }
     }
@@ -104,7 +194,7 @@ function listarImoveisComFiltro(texto) {
 function mostrarTodosOsImoveis() {
     for (let i = 0; i< imoveis.length; i++) {
         const imovel = imoveis[i];
-        criarImovelHTML(imovel)
+        criarImovelHTML(imovel, false)
     }
     
 }

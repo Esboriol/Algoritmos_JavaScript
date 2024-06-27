@@ -5,6 +5,7 @@ const imoveisDB = [
         "nome": "Palacio do Thomas",
         "cidade": "Saltinho",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -22,6 +23,7 @@ const imoveisDB = [
         "nome": "Apartamento do enzogamer_21",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Sim",
         "adicionais": [
             {
                 "chave": "Banheiro",
@@ -35,6 +37,7 @@ const imoveisDB = [
         "nome": "Casa de uma familia normal dos EUA",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -56,6 +59,7 @@ const imoveisDB = [
         "nome": "Casa 04",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": []
     },
     {
@@ -64,6 +68,7 @@ const imoveisDB = [
         "nome": "Casa 05",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Sim",
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -77,6 +82,7 @@ const imoveisDB = [
         "nome": "Casa 06",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": []
     },
     {
@@ -85,6 +91,7 @@ const imoveisDB = [
         "nome": "Casa 07",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -98,6 +105,7 @@ const imoveisDB = [
         "nome": "Casa 08",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": []
     },
     {
@@ -106,6 +114,7 @@ const imoveisDB = [
         "nome": "Casa 09",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Sim",
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -119,6 +128,7 @@ const imoveisDB = [
         "nome": "Casa 10",
         "cidade": "Charqueada",
         "estado": "São Paulo",
+        "apartamento": "Nao",
         "adicionais": [
             {
                 "chave": "Quartos",
