@@ -1,7 +1,14 @@
-const imoveis = buscarTodosImoveis()
-let imoveisFavoritos = []
+let imoveis = buscarTodosImoveis()
 
-function criarImovelHTML(imovel, favorito) {
+if (window.localStorage.getItem("lista") == null) {
+    window.localStorage.setItem("lista", JSON.stringify(imoveis))
+
+} else {
+    imoveis = JSON.parse(window.localStorage.getItem("lista"))
+
+}
+
+function criarImovelHTML(imovel) {
     const section = document.createElement("section")
     section.setAttribute("class", "listing")
 
@@ -36,12 +43,13 @@ function criarImovelHTML(imovel, favorito) {
     const favorito = document.createElement("img")
     favorito.setAttribute("id", favId)
 
-    if (favorito == true) {
-        favorito.setAttribute("scr", "img/favorito.png")
-    } else if (favorito == false) {
+    if (imovel.favorito == true) {
+        favorito.setAttribute("src", "img/favorito.png")
+    } else if (imovel.favorito == false) {
         favorito.setAttribute("src", "img/desfavorito.png")
     }
 
+    favorito.setAttribute("class", "favorito")
     favorito.setAttribute("onclick", `favoritar(${JSON.stringify(imovel)})`)
 
     section.appendChild(favorito)
@@ -63,24 +71,30 @@ function filtrar() {
 function favoritar(imovel) {
     const favId = `fav-${imovel.id}`
     const fav = document.getElementById(favId)
+    const posicaoLista = imovel.id - 1
 
     if (fav.getAttribute("src") == "img/favorito.png") {
         fav.setAttribute("src", "img/desfavorito.png")
+        imoveis[posicaoLista].favorito = false
     } else {
         fav.setAttribute("src", "img/favorito.png")
-        imoveisFavoritos.push(imovel)
-        window.localStorage.setItem("lista", JSON.stringify(imoveisFavoritos))
+        imoveis[posicaoLista].favorito = true
     }
+
+    window.localStorage.setItem("lista", JSON.stringify(imoveis))
 }
 
 function mostrarFavoritos() {
     
     limparLista()
-    imoveisFavoritos = JSON.parse(window.localStorage.getItem("lista"))
 
-    for (let i = 0; i < imoveisFavoritos.length; i++) {
-        const imvFav = imoveisFavoritos[i];
-        criarImovelHTML(imvFav, true)
+    for (let i = 0; i < imoveis.length; i++) {
+        const imovel = imoveis[i];
+       
+        if (imovel.favorito == true) {
+            criarImovelHTML(imovel)
+
+        }
 
     }
 }
@@ -98,7 +112,7 @@ function apartamento() {
 
             if (algo.apartamento == "Sim") {
 
-                criarImovelHTML(algo, false)
+                criarImovelHTML(algo)
                 
             }
             
@@ -192,9 +206,13 @@ function listarImoveisComFiltro(texto) {
 }
 
 function mostrarTodosOsImoveis() {
+
+    limparLista()
+
     for (let i = 0; i< imoveis.length; i++) {
         const imovel = imoveis[i];
-        criarImovelHTML(imovel, false)
+
+        criarImovelHTML(imovel)
     }
     
 }

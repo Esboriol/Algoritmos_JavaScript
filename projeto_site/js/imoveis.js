@@ -6,6 +6,7 @@ const imoveisDB = [
         "cidade": "Saltinho",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos disponiveis",
@@ -24,6 +25,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Sim",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Banheiro",
@@ -38,6 +40,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -60,6 +63,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": []
     },
     {
@@ -69,6 +73,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Sim",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -83,6 +88,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": []
     },
     {
@@ -92,6 +98,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -106,6 +113,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": []
     },
     {
@@ -115,6 +123,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Sim",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos",
@@ -129,6 +138,7 @@ const imoveisDB = [
         "cidade": "Charqueada",
         "estado": "São Paulo",
         "apartamento": "Nao",
+        "favorito": false,
         "adicionais": [
             {
                 "chave": "Quartos",
