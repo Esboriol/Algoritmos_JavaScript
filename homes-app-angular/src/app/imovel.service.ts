@@ -15,6 +15,8 @@ export class ImovelService {
       "estado": "Pau Queimado",
       "favorito": false,
       "tipo": "true",
+      "latitude": "40.7128",
+      "longitude": "74.0060",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -54,6 +56,8 @@ export class ImovelService {
       "estado": "Pau Grande",
       "favorito": false,
       "tipo": "true",
+      "latitude": "48.8566",
+      "longitude": "2.3522",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -93,6 +97,8 @@ export class ImovelService {
       "estado": "Piracanjuba",
       "favorito": false,
       "tipo": "true",
+      "latitude": "-33.8688",
+      "longitude": "151.2093",
       "adicionais": [
         {
           "chave": '!',
@@ -109,6 +115,8 @@ export class ImovelService {
       "estado": "Canadá",
       "favorito": false,
       "tipo": "false",
+      "latitude": "-22.9068",
+      "longitude": "-43.1729",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -149,6 +157,8 @@ export class ImovelService {
       "estado": "Suécia",
       "favorito": false,
       "tipo": "true",
+      "latitude": "30.0444",
+      "longitude": "31.2357",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -189,6 +199,8 @@ export class ImovelService {
       "estado": "Nova Guiné",
       "favorito": false,
       "tipo": "true",
+      "latitude": "35.6895",
+      "longitude": "139.6917",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -228,6 +240,8 @@ export class ImovelService {
       "estado": "Patagônia",
       "favorito": false,
       "tipo": "true",
+      "latitude": "-33.9249",
+      "longitude": "18.4241",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -268,6 +282,8 @@ export class ImovelService {
       "estado": "Brasil",
       "favorito": false,
       "tipo": "true",
+      "latitude": "-34.6037",
+      "longitude": "-58.3816",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -308,6 +324,8 @@ export class ImovelService {
       "estado": "Rússia",
       "favorito": false,
       "tipo": "true",
+      "latitude": "41.0082",
+      "longitude": "28.9784",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -348,6 +366,8 @@ export class ImovelService {
       "estado": "São Paulo",
       "favorito": false,
       "tipo": "true",
+      "latitude": "49.2827",
+      "longitude": "-123.1207",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -388,6 +408,8 @@ export class ImovelService {
       "estado": "São Paulo",
       "favorito": false,
       "tipo": "false",
+      "latitude": "-1.2921",
+      "longitude": "36.8219",
       "adicionais": [
         {
           "chave": "Wi-Fi",
@@ -428,6 +450,8 @@ export class ImovelService {
       "estado": "São Paulo",
       "favorito": false,
       "tipo": "true",
+      "latitude": "64.1355",
+      "longitude": "-21.8954",
       "adicionais": [
         {
           "chave": "Wi-Fi",

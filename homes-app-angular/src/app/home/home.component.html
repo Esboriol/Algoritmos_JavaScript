@@ -2,6 +2,15 @@
     <form>
         <input type="text" #texto placeholder="Filtrar por cidade e/ou estado">
         <button class="primary" type="button" (click)="listarImoveisComFiltro(texto.value)" (keypress.enter)="listarImoveisComFiltro(texto.value)">Filtrar</button>
+        <button class="primary alinha" type="button" (click)="mostrarFavoritos()">Meus favoritos</button>
+        <button class="primary alinha" type="button" (click)="mostrarTodos(true)">Mostrar todos</button>
+        
+        <input class="alinha" type="radio" name="tipo" (click)="filtrarPorTipo('false')" id="radioApto"/>
+        <label class="apto">Apartamento</label>
+
+        <input class="alinha" type="radio" name="tipo" (click)="filtrarPorTipo('true')" id="radioCasa"/>
+        <label class="casa">Casa</label>
+    
     </form>
 
     <section class="results">
@@ -14,6 +23,15 @@
                 <h2 class="listing-heading">{{ imovel.nome }}</h2>
                 <p class="listing-location">{{ imovel.cidade + ", " + imovel.estado }}</p>
                 <a [routerLink]="['/detalhes', imovel.id]">Veja Mais</a>
+
+                <img src="maps.jpg" alt="Mapa" class="favorito" (click)="abrirMapa(imovel)">
+
+                @if (imovel.favorito == false) {
+                <img class="favorito" src="descoracao.png" alt="Coração" (click)="favoritar(imovel)">    
+
+                } @else {
+                    <img class="favorito" src="coracao.png" alt="Coração" (click)="favoritar(imovel)">
+                }
 
             </section>
         }

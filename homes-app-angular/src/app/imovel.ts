@@ -11,5 +11,7 @@ export interface Imovel {
     estado: string;
     favorito: boolean;
     tipo: string;
+    latitude: string;
+    longitude: string;
     adicionais: propriedades[];
 }
