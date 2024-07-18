@@ -1,6 +1,13 @@
 article {
     padding: 10px 0px 40px 0px !important;
   }
+
+  .Seta {
+    width: 2%;
+    position: absolute;
+    top: 8%;
+    left: 14%;
+  }
   
   h2 {
     font-size: 35px !important;

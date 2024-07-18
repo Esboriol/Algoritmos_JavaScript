@@ -46,7 +46,24 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "É um bueiro...tem um cheiro horrível, uma aparência horrível, tudo horrível...e tem o Luís"
         }
-      ]
+      ],
+      "aluguel": [{
+       "chave": "Aluguel mensal",
+       "valor": 5000.00
+      },
+      {
+        "chave": "Aluguel anual",
+        "valor": 50000.00
+      },
+      {
+        "chave": "Aluguel por dois anos",
+        "valor": 190000.00
+      }
+    ],
+    "financiamento": [{
+      "chave": "Valor total",
+      "valor": 50000.00
+    }]
     },
     {
       "id": 2,
@@ -87,7 +104,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma casa aconchegante e humilde para deixar seu cachorrinho morar."
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
     },
     {
       "id": 3,
@@ -104,8 +123,9 @@ export class ImovelService {
           "chave": '!',
           "valor": "O proprietário ainda não adicionou informações adicionais."
         }
-      ]
-
+      ],
+      "aluguel": [],
+      "financiamento": [],
     },
     {
       "id": 4,
@@ -146,7 +166,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma casa pequena, de recomendação, 1 pessoa. Simples, porém aconchegante."
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -188,7 +210,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma casa na floresta muito bonito e aconchegante, boa para agregar muitas pessoas."
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -230,7 +254,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Um sobrado na vizinhança de JoinVille; Simples, bonita e Acolhedora. (Contém uma pequena casinha de ferramentas)"
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
     },
     {
       "id": 7,
@@ -271,7 +297,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma pequena casa em um condomínio de qualidade, o qual têm parquinhos, pequenas praças e uma piscina pública para os *moradores*"
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -313,7 +341,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma casa com design moderno e muito linda. Ótima para festas e famílias grandes."
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -355,7 +385,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Um pequeno sobrado acolhedor com design retrô. Uma ótima casa para casais!"
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -397,7 +429,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "Uma casa com design moderno e muito linda. Ótima para festas e famílias bem grandonas."
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -439,7 +473,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "É um bueiro...tem um cheiro horrível, uma aparência horrível, tudo horrível...e tem o Luís"
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
     {
@@ -481,7 +517,9 @@ export class ImovelService {
           "chave": "Descrição",
           "valor": "É um bueiro...tem um cheiro horrível, uma aparência horrível, tudo horrível...e tem o Luís"
         }
-      ]
+      ],
+      "aluguel": [],
+      "financiamento": [],
 
     },
   ]

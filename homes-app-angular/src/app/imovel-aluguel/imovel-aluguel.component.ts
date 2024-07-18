@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { Imovel } from '../imovel';
 import { ImovelService } from '../imovel.service';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-imovel-detalhes',
+  selector: 'app-imovel-aluguel',
   standalone: true,
   imports: [],
-  templateUrl: './imovel-detalhes.component.html',
-  styleUrl: './imovel-detalhes.component.css'
+  templateUrl: './imovel-aluguel.component.html',
+  styleUrl: './imovel-aluguel.component.css'
 })
-export class ImovelDetalhesComponent {
+export class ImovelAluguelComponent {
 
   imovel: Imovel | undefined
 
@@ -23,13 +23,10 @@ export class ImovelDetalhesComponent {
     this.imovel = this.imvService.buscarImovelPorId(id)
   }
 
-  Agiotagem() {
-    const url = `detalhes/${this.imovel?.id}/aluguel`
+  Voltar () {
+    const url = `/detalhes/${this.imovel?.id}`
     this.rt.navigate([url])
   }
 
-  Pobre() {
-    const url = `detalhes/${this.imovel?.id}/financiamento`
-    this.rt.navigate([url])
-  }
 }
+

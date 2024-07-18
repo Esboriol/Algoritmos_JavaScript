@@ -1,0 +1,22 @@
+<img alt="Seta" class="Seta cursor" src="seta.png" (click)="Voltar()">
+
+<section class="content">
+
+    <article>
+        <img class="listing-photo" alt="Foto" src="{{imovel?.url_foto}}">
+        <section class="listing-description">
+            <h2 class="listing-heading">{{imovel?.nome}}</h2>
+            <p class="listing-location">{{imovel?.cidade}}, {{imovel?.estado}}</p>
+        </section>
+
+        <section class="listing-features">
+            <h2 class="section-heading">Informações para alugar</h2>
+            <ul>
+                @for(info of imovel?.aluguel; track $index) {
+                    <li>{{info.chave}}: R$ {{info.valor}}</li>
+                }
+            </ul>
+        </section>
+
+    </article>
+</section>
